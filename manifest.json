@@ -1,0 +1,7 @@
+{
+  "name": "2Gether",
+  "short_name": "2Gether",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "landscape"
+}

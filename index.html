@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+
+	<html>
+	
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<meta name="description" content="2Gether - Join us">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>2Gether</title>
+
+		 <!-- Disable tap highlight on IE -->
+		<meta name="msapplication-tap-highlight" content="no">
+
+		<!-- Web Application Manifest -->
+		<link rel="manifest" href="manifest.json">
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="2Gether">
+		<meta name="theme-color" content="#303F9F">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="2Gether">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
+
+		<!-- Tile icon for Win8 -->
+		<meta name="msapplication-TileColor" content="#3372DF">
+		<meta name="msapplication-navbutton-color" content="#303F9F">
+
+		<!-- Material Design Lite -->
+  		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.pink-purple.min.css">
+  		<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  		<!-- Font Awesome Icons -->
+  		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  		<!-- w3css  -->
+  		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<link rel="stylesheet" href="css/w3-theme-deep-purple.css">
+
+  		<!-- main css -->
+		<link rel="stylesheet" href="css/main.css">
+
+
+	</head>
+
+	<body class="w3-theme-l4">
+		<div class="login_div">
+			<form class="login_form " action="#">
+				<div class="w3-card-4">
+					<header class="w3-container w3-theme w3-center">
+					  <h3><span class="w3-tag w3-round w3-text-theme w3-white">2</span>Gether</h3>
+					</header>
+				</br>
+					<div class="w3-input-group" >      
+		              <input id="email" class="w3-input" placeholder="e-mail" type="email" required>
+		            </div>
+		            <div class="w3-input-group">      
+		              <input id="password" class="w3-input" placeholder="password" type="password" required>
+		            </div>
+		            <p class=" w3-center">
+			            <a href="#" onclick="" class="w3-text-theme w3-hover-text-pink" style="margin-right: 10px;" target="_parent">
+			             	Esqueceu sua senha?
+			            </a>
+		            </p>
+		            <div class="w3-input-group w3-center">
+		            	<button onclick="app.login()" class="w3-btn w3-round w3-theme" style="width: 40%;"> Entrar </button>
+		        	</div>
+				<a href="#" onclick="myFunction('createAccount')" class="w3-btn-block w3-theme-l2">Createn an account</a>
+					<div id="createAccount" class="w3-accordion-content w3-animate-zoom">
+						<div class="w3-container w3-light-grey w3-border-top w3-center">
+							<p>
+								<button class="w3-btn w3-round w3-theme">
+									<span class="w3-tag w3-round w3-text-theme w3-white">2</span>Gether
+								</button>
+							</p>
+							<!-- thirdy party login -->
+							<a class="w3-btn-floating w3-indigo" href="javascript:void(0)" title="Facebook">
+								<i class="fa fa-facebook" style="font-size:24px;"></i>
+							</a>
+							<a class="w3-btn-floating w3-cyan" href="javascript:void(0)" title="Twitter">
+								<i class="fa fa-twitter"></i>
+							</a>
+							<a class="w3-btn-floating w3-red" href="javascript:void(0)" title="Google +">
+								<i class="fa fa-google-plus"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>	
+
+
+
+
+
+		
+		
+
+
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyA27mo31cZN-RxJWZcbGP30rdBhXlEHxJU",
+	    authDomain: "project-969024608302501095.firebaseapp.com",
+	    databaseURL: "https://project-969024608302501095.firebaseio.com",
+	    storageBucket: "project-969024608302501095.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+	</script>
+    <script src="scripts/main.js"></script>	
+    <script>
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+	</body>
+	</html>
