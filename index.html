@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-	<html>
+	<html ng-app="Togheter">
 	
 	<head>
 		<meta charset="utf-8">
@@ -42,6 +42,10 @@
   		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 		<link rel="stylesheet" href="css/w3-theme-deep-purple.css">
 
+		<!-- load angular and angular route via CDN -->
+      	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
   		<!-- main css -->
 		<link rel="stylesheet" href="css/main.css">
 
@@ -49,6 +53,8 @@
 	</head>
 
 	<body class="w3-theme-l4">
+		<div ng-view></div>
+		
 		<div class="login_div">
 			<form class="login_form " action="#">
 				<div class="w3-card-4">
