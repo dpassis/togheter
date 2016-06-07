@@ -28,6 +28,8 @@ Togheter.prototype.initFirebase = function() {
   // Initiates Firebase auth and listen to auth state changes.
   this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
 
+  console.log('Firebase init is ok');
+
 
 };
 

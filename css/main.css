@@ -7,12 +7,31 @@ body {
   position: relative;
 }
 
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+   
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
+/** auth **/
 .w3-accordion-content a {
     padding: 0px;
     display: inline-block;
 }
 
-.login_div {
+.login-div {
     position: absolute;
     
     width: 300px;
@@ -25,7 +44,7 @@ body {
     margin-left: -150px;
 }
 
-.login_form {
+.login-form {
     width: 300px;
     height: auto;
     
@@ -34,6 +53,20 @@ body {
     
     margin: 0;
     padding: 0;
+}
+
+/** home **/
+.home-div {
+    position: absolute;
+    
+    width: 150px;
+    height: 150px;
+    
+    /* Center form in page horizontally & vertically */
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -100px;
 }
 
 /***************************************************************************		

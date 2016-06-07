@@ -6,24 +6,28 @@ angular.module('Togheter')
  })
 
 
-
 .config(function($routeProvider, $locationProvider) {
 
-	$routeProvider.when('/auth', {
-		templateUrl: 'templates/pages/auth/index.html',
-		controller: 'AuthController',
-		controllerAs: 'authController'
-	})
+	$routeProvider
 
-	.when('/home', {
+	.when('/', {
 		templateUrl: 'templates/pages/home/index.html',
 
 	})
 
+
+	.when('/auth', {
+		templateUrl: 'templates/pages/auth/index.html',
+		controller: 'AuthController',
+		controllerAs: 'authController'
+
+	})
+
+
 	.otherwise({ redirectTo: '/' });
 
 
-	// configure html5 to get links working on jsfiddle
+ // Add HTML5 History API support
   $locationProvider.html5Mode(true);
 
 });
