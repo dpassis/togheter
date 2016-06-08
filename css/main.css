@@ -66,7 +66,15 @@ a:active {
     top: 50%;
     left: 50%;
     margin-top: -200px;
-    margin-left: -100px;
+    margin-left: -75px;
+}
+
+.home-init {
+    width: 150px;
+    height: auto;
+    
+    margin: 0;
+    padding: 0;
 }
 
 /***************************************************************************		
