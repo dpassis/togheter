@@ -47,13 +47,23 @@
       	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
       	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 
+
+      	<!--Internationanlize -->
+		<script src="//code.angularjs.org/1.2.25/angular-mocks.js"></script>
+	  	<script src="//code.angularjs.org/1.2.25/angular-cookies.js"></script>
+	  	<script src="//code.angularjs.org/1.2.25/angular-sanitize.js"></script>
+	  	<script src="//rawgit.com/doshprompt/bower-angular-localization/master/angular-localization.js"></script>
+
+	  	<script src="js/app.js"></script>	
+		<script src="js/resources.js"></script>
+
   		<!-- main css -->
 		<link rel="stylesheet" href="css/main.css">
 
 
 	</head>
 
-	<body class="w3-theme-l4">
+	<body class="w3-theme-l4" data-ng-controller="ExampleCtrl">
 		<div ng-controller="MainController"></div>
 		<div ng-view></div>
 
@@ -73,10 +83,11 @@
 	</script>
     
     
-    <script src="js/main.js"></script>	
-	<script src="js/routes.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/routes.js"></script>
 	<script src="js/controllers/auth-controller.js"></script>
-    <script>
-</script>
+
+	
+
 	</body>
 	</html>

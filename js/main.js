@@ -14,8 +14,6 @@ function Togheter() {
   
 
 }
-// add ngRoute module
-angular.module("Togheter", ['ngRoute']);
 
 
 // Sets up shortcuts to Firebase features and initiate firebase auth.

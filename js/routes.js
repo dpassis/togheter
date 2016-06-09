@@ -12,6 +12,11 @@ angular.module('Togheter')
 
 	.when('/', {
 		templateUrl: 'templates/pages/home/index.html',
+		resolve: {
+		    langs: function (locale) {
+		      return locale.ready('common');
+    	}
+    }
 
 	})
 
@@ -19,7 +24,12 @@ angular.module('Togheter')
 	.when('/auth', {
 		templateUrl: 'templates/pages/auth/index.html',
 		controller: 'AuthController',
-		controllerAs: 'authController'
+		controllerAs: 'authController',
+		resolve: {
+		    langs: function (locale) {
+		      return locale.ready('common');
+    	}
+    }
 
 	})
 
