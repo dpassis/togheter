@@ -1,0 +1,99 @@
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+body {
+
+  position: relative;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+   
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
+/** auth **/
+.w3-accordion-content a {
+    padding: 0px;
+    display: inline-block;
+}
+
+.login-div {
+    position: absolute;
+    
+    width: 300px;
+    height: auto;
+    
+    /* Center form in page horizontally & vertically */
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -150px;
+}
+
+.login-form {
+    width: 300px;
+    height: auto;
+    
+    background: white;
+    border-radius: 10px;
+    
+    margin: 0;
+    padding: 0;
+}
+
+/** home **/
+.home-div {
+    position: absolute;
+    
+    width: 150px;
+    height: 150px;
+    
+    /* Center form in page horizontally & vertically */
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -75px;
+}
+
+.home-init {
+    width: 150px;
+    height: auto;
+    
+    margin: 0;
+    padding: 0;
+}
+
+/***************************************************************************		
+*
+* Fix browser
+*
+****************************************************************************/		
+		
+			
+/* Remove the yellow highlight from Chrome */		
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* Remove the outline border from Chrome */
+textarea:focus, input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
