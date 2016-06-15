@@ -1,3 +1,7 @@
 {
   "createAccount": "Criar uma conta",
+  "email": "e-mail",
+  "password": "senha",
+  "login": "Entrar",
+  "forgotPassword": "Esqueceu sua senha?"
 }

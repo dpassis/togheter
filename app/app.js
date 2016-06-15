@@ -8,6 +8,8 @@ define(['angular',
 		'angular_ocLazyLoad'], 
 	function () {
 
+
+
 		var app = angular.module('Togheter', [
 											  'ngRoute',
 											  'ngMockE2E',
@@ -24,7 +26,7 @@ define(['angular',
 		  ])
 
 	
-		app.controller('MainController', function($scope, $route, $routeParams, $location, $cookies, locale) {
+		app.controller('MainController', function($scope, $route, $routeParams, $location, locale) {
 		     $scope.$route = $route;
 		     $scope.$location = $location;
 		     $scope.$routeParams = $routeParams;
@@ -34,7 +36,10 @@ define(['angular',
 		 })
 
 
-		app.config(function($routeProvider, $locationProvider,$ocLazyLoadProvider) {
+		app.config(function($routeProvider, $locationProvider, $ocLazyLoadProvider, $controllerProvider, $provide) {
+
+				app.registerController = $controllerProvider.register;
+			 	app.$register = $provide;
 
 			$ocLazyLoadProvider.config({
 			     modules: [{
@@ -61,21 +66,21 @@ define(['angular',
 
 			.when('/auth', {
 				templateUrl: 'app/components/auth/views/authView.html',
-				//controller: 'AuthController',
+				controller: 'authController',
 				//controllerAs: 'authController',
 				resolve: {
 				    langs: function (locale) {
-				      return locale.ready('common');
+				      return locale.ready('auth');
 		    		},
-		    		 loadModule: ['$ocLazyLoad', '$q', function ($ocLazyLoad, $q) {
+		    		loadModule: ['$ocLazyLoad', '$q', function ($ocLazyLoad, $q) {
                         //debugger
                         var deferred = $q.defer();
 
                         // After loading the controller file we need to inject the module
                         // to the parent module
-                        require(["AuthController"], function () {
+                        require(["authController"], function () {
                             // Using OcLazyLoad we can inject the any module to the parent module
-                            $ocLazyLoad.inject('auth');
+                            $ocLazyLoad.inject('Togheter.auth');
                             deferred.resolve();
                         });
                         return deferred.promise;

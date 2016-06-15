@@ -1,7 +1,7 @@
-angular.module('Togheter.auth')
-/**.controller('AuthController',['$scope', '$routeParams', function ($scope, $routeParams){
+/**angular.module('Togheter.auth')
+.controller('authController',['$scope', '$routeParams', function ($scope, $routeParams){
 
-	$scope.name = "AuthController";
+	$scope.name = "authController";
     $scope.params = $routeParams;
 
 }]);**/

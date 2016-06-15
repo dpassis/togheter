@@ -26,6 +26,10 @@ require.config({
         /** load ui_bootstrap **/
         angular_ui_bootstrap: 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min',
 
+
+        /********* Required Controllers *****************/
+        authController: 'components/auth/auth'
+
 	},
 
 	 // Mention the dependencies
@@ -73,7 +77,11 @@ require.config({
         /** deps to app **/
         app: {
         	deps: ['angular','angular_ocLazyLoad', 'angular_ui_bootstrap']
-        }
+        },
+
+        authController: {
+            deps: ['app']
+        },
 
     },
 

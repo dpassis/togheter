@@ -1,3 +1,7 @@
 {
   "createAccount": "Create an Account",
+  "email": "e-mail",
+  "password": "password",
+  "login": "Login",
+  "forgotPassword": "Forgot your password?"
 }
