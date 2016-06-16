@@ -1,23 +1,18 @@
 'use strict';
 
+var app = {
+
 // Initializes Togheter.
-function Togheter() {
-
-  // Shortcuts to DOM Elements.
-  //this.lnkCreateAccount = document.getElementById('lnkCreateAccount')
-
-
-  //add event to element
-  //this.lnkCreateAccount.addEventListener('click', this.showCreateAccount.bind('createAccount'));
+ togheter : function() {
 
   this.initFirebase();
   
 
-}
+},
 
 
 // Sets up shortcuts to Firebase features and initiate firebase auth.
-Togheter.prototype.initFirebase = function() {
+initFirebase : function() {
   // Shortcuts to Firebase SDK features.
   this.auth = firebase.auth();
   this.database = firebase.database();
@@ -29,7 +24,7 @@ Togheter.prototype.initFirebase = function() {
   console.log('Firebase init is ok');
 
 
-};
+},
 
 
 /********************************************************************************
@@ -40,72 +35,98 @@ Togheter.prototype.initFirebase = function() {
 /** Signs-in Togheter 
 * Needs verify the type of provider
 */
-Togheter.prototype.signIn = function() {
+ signIn : function(providerId) {
+
   // Sign in Firebase using popup auth and Google as the identity provider.
-  var provider = new firebase.auth.GoogleAuthProvider();
-  this.auth.signInWithPopup(provider);
-};
+  var provider;
+
+  if (providerId === 'facebook') {
+
+    provider =  new firebase.auth.FacebookAuthProvider();
+    provider.addScope('user_birthday');
+
+  }else if(providerId === 'google'){
+
+    provider =  new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/plus.login');
+
+
+  }else if(providerId === 'twitter'){
+
+    provider = new firebase.auth.TwitterAuthProvider();
+
+  }else if(providerId === 'passAuth'){
+
+  }
+
+
+  this.auth.signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+
+},
+
 
 /** Signs-out Togheter 
 * 
 */
-Togheter.prototype.signOut = function() {
+signOut : function() {
   // Sign out of Firebase.
   this.auth.signOut();
-};
+},
 
 
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
-Togheter.prototype.onAuthStateChanged = function(user) {
+onAuthStateChanged : function(user) {
   if (user) { // User is signed in!
 
     // Get profile pic and user's name from the Firebase user object.
     var profilePicUrl = user.photoURL;
     var userName = user.displayName;
-	
-    // Set the user's profile pic and name.
-   // this.userPic.style.backgroundImage = 'url(' + (profilePicUrl || '/images/profile_placeholder.png') + ')';
-    //this.userName.textContent = userName;
-
-    // Show user's profile and sign-out button.
-    //this.userName.removeAttribute('hidden');
-    //this.userPic.removeAttribute('hidden');
-
   } else { // User is signed out!
   	
-    // Hide user's profile and sign-out button.
-    //this.userName.setAttribute('hidden', 'true');
-    //this.userPic.setAttribute('hidden', 'true');
-
+  
     
   }
-};
+},
 
 
 /********************************************************************************
 *                       Manipulate elements Functions						   	             *
 *																				                                       *
 *********************************************************************************/
- function showCreateAccount(elementId) {
+showCreateAccount : function(elementId) {
     var x = document.getElementById(elementId);
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
     } else { 
         x.className = x.className.replace(" w3-show", "");
     }
+}
+
+
+
+
+
 };
-
-
-
-
-
-
 /**
 *Initialize app
 */
 window.onload = function() {
-  window.together = new Togheter();
-
-  console.log('Togheter is ON');
+    app.togheter();
+    console.log('Togheter is ON');
 };

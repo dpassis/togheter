@@ -18,7 +18,7 @@
             <div class="w3-input-group w3-center">
             	<button  data-i18n="auth.login" onclick="app.login()" class="w3-btn w3-round w3-theme" style="width: 40%;"> </button>
         	</div>
-		<a data-i18n="auth.createAccount" id="lnkCreateAccount" href="auth"  onclick="showCreateAccount('createAccount')" class="w3-btn-block w3-theme-l2"></a>
+		<a data-i18n="auth.createAccount" id="lnkCreateAccount" href="auth"  onclick="app.showCreateAccount('createAccount')" class="w3-btn-block w3-theme-l2"></a>
 			<div id="createAccount" class="w3-accordion-content  w3-animate-zoom">
 				<div class="w3-container w3-light-grey w3-border-top w3-center">
 					<p>
@@ -27,13 +27,13 @@
 						</button>
 					</p>
 					<!-- thirdy party login -->
-					<a class="w3-btn-floating w3-indigo" href="javascript:void(0)" title="Facebook">
+					<a class="w3-btn-floating w3-indigo" href="javascript:javascript:app.signIn('facebook')" title="Facebook">
 						<i class="fa fa-facebook" style="font-size:24px;"></i>
 					</a>
-					<a class="w3-btn-floating w3-cyan" href="javascript:void(0)" title="Twitter">
+					<a class="w3-btn-floating w3-cyan" href="javascript:javascript:app.signIn('twitter')" title="Twitter">
 						<i class="fa fa-twitter"></i>
 					</a>
-					<a class="w3-btn-floating w3-red" href="javascript:void(0)" title="Google +">
+					<a class="w3-btn-floating w3-red"  href="javascript:app.signIn('google')" title="Google +">
 						<i class="fa fa-google-plus"></i>
 					</a>
 				</div>
